@@ -76,6 +76,9 @@ To preserve architectural purity and prevent premature coupling, the following b
 | Route | Access | Purpose |
 |---|---|---|
 | `/` | **Public** | Primary commercial landing page explaining the value proposition, workflow, document repository, compliance readiness, and ecosystem connection. |
+| `/login` | **Public (Presentation)** | Dedicated sign-in entry flow with client-side form validation, focus states, and presentation loading states (no backend). |
+| `/register` | **Public (Presentation)** | Dedicated account creation flow with UK trade selection, client-side validation, and compliance consent controls (no backend). |
+| `/onboarding` | **Public (Presentation)** | Multi-step worker profile initialization and Right to Work compliance declaration flow (no backend). |
 | `/design-system` | **Internal / Dev** | Interactive design system showcase and component workbench. **Intentionally hidden from public navigation.** Directly accessible via URL for engineering and design review. |
 
 ---
@@ -91,6 +94,12 @@ workerdocs/
 │   ├── globals.css                    # Tailwind CSS v4 theme variables
 │   ├── layout.tsx                     # Root layout with Geist & Geist Mono fonts
 │   ├── page.tsx                       # Thin route -> delegates to <HomePage />
+│   ├── login/
+│   │   └── page.tsx                   # Thin route -> delegates to <LoginPage />
+│   ├── register/
+│   │   └── page.tsx                   # Thin route -> delegates to <RegisterPage />
+│   ├── onboarding/
+│   │   └── page.tsx                   # Thin route -> delegates to <OnboardingPage />
 │   └── design-system/
 │       └── page.tsx                   # Thin route -> delegates to <DesignSystemPage />
 │
@@ -133,12 +142,30 @@ workerdocs/
 │       │   ├── FinalCta.tsx
 │       │   └── index.ts
 │       │
+│       ├── LoginPage/                 # Sign-in page composition
+│       │   ├── LoginPage.tsx          # Server Component wrapper & layout
+│       │   ├── LoginForm.tsx          # Client leaf (form validation & loading state)
+│       │   └── index.ts
+│       │
+│       ├── RegisterPage/              # Registration page composition
+│       │   ├── RegisterPage.tsx       # Server Component wrapper & layout
+│       │   ├── RegisterForm.tsx       # Client leaf (trade select & form validation)
+│       │   └── index.ts
+│       │
+│       ├── OnboardingPage/            # Worker onboarding sequence
+│       │   ├── OnboardingPage.tsx     # Server Component wrapper & layout
+│       │   ├── OnboardingWizard.tsx   # Client leaf (multi-step wizard & validation)
+│       │   ├── StepIndicator.tsx      # Visual & accessible progress bar
+│       │   ├── PostponedFieldsNotice.tsx # Deferred items context notice
+│       │   └── index.ts
+│       │
 │       └── DesignSystemPage/          # Design system showcase composition
 │           ├── DesignSystemPage.tsx   # Interactive client component
 │           └── index.ts
 │
 ├── docs/
-│   └── ARCHITECTURE.md                # Comprehensive technical engineering guide
+│   ├── ARCHITECTURE.md                # Comprehensive technical engineering guide
+│   └── PRODUCT_FLOW.md                # Product flows & frontend contracts
 │
 ├── public/                            # Static public assets
 ├── package.json
@@ -259,7 +286,9 @@ When executing commands on Windows PowerShell:
 |---|---|---|---|
 | **Phase 1** | **Design System & UI Foundation** | Completed | Reusable UI primitives, typographic scale, color tokens, and design showcase. |
 | **Phase 2** | **Production Landing Page** | Completed | 10-section commercial landing page aligned with StaffBeacon ecosystem. |
-| **Phase 3** | **Architecture & Documentation** | **Current** | Thin App Router routes, page-folder pattern, canonical Logo, a11y improvements, and engineering blueprints. |
-| **Phase 4** | **Worker Authentication Wireframes** | Next | Login & registration presentation layouts, profile setup wireframes. |
-| **Phase 5** | **Worker Dashboard & Document Vault** | Upcoming | Document upload interface, status review trail, and readiness score calculation. |
-| **Phase 6** | **Backend, Prisma & Database** | Future | PostgreSQL schema, Prisma migrations, document file storage, and StaffBeacon API integration. |
+| **Phase 3** | **Architecture & Documentation** | Completed | Thin App Router routes, page-folder pattern, canonical Logo, a11y improvements, and engineering blueprints. |
+| **Phase 4** | **Worker Authentication UI** | Completed | Dedicated presentation-only `/login` and `/register` entry flows with form validation and loading states. |
+| **Phase 5** | **Worker Onboarding & Compliance** | Completed | Multi-step worker profile initialization, Right to Work statutory declaration, and CSCS input flow. |
+| **Phase 6** | **Worker Dashboard & Command Center** | Next | Operational command center, readiness score meter, and action requirement cards. |
+| **Phase 7** | **Document Vault & Upload UI** | Upcoming | Document upload interface, category filtering, status review trail, and preview modals. |
+| **Phase 8** | **Backend, Prisma & Database** | Future | PostgreSQL schema, Prisma migrations, document file storage, and StaffBeacon API integration. |

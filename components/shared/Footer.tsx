@@ -60,17 +60,22 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#readiness" className="hover:text-[#0052FF] transition-colors">
+                <Link href="/login" className="hover:text-[#0052FF] transition-colors">
                   Login
                 </Link>
               </li>
               <li>
-                <Link href="#how-it-works" className="hover:text-[#0052FF] transition-colors">
+                <Link href="/register" className="hover:text-[#0052FF] transition-colors">
                   Register
                 </Link>
               </li>
               <li>
-                <Link href="#hero" className="hover:text-[#0052FF] transition-colors">
+                <Link href="/onboarding" className="hover:text-[#0052FF] transition-colors">
+                  Worker Onboarding
+                </Link>
+              </li>
+              <li>
+                <Link href="/#hero" className="hover:text-[#0052FF] transition-colors">
                   Worker Profile
                 </Link>
               </li>

@@ -1,0 +1,12 @@
+import { Metadata } from "next";
+import { LoginPage } from "@/components/pages/LoginPage";
+
+export const metadata: Metadata = {
+  title: "Sign In — WorkerDocs",
+  description: "Access your verified worker profile and compliance documents.",
+};
+
+export default function Page() {
+  return <LoginPage />;
+}
+

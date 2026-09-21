@@ -251,6 +251,29 @@ export function IconEye({ size = 16, className = "", ...props }: IconProps) {
   );
 }
 
+export function IconEyeOff({ size = 16, className = "", ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      {...props}
+    >
+      <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .698 10.743 10.743 0 0 1-2.905 4.106" />
+      <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
+      <path d="M17.479 17.499A10.75 10.75 0 0 1 12 19c-7 0-10-7-10-7a10.7 10.7 0 0 1 3.535-4.414" />
+      <line x1="2" y1="2" x2="22" y2="22" />
+    </svg>
+  );
+}
+
+
 export function IconDownload({ size = 16, className = "", ...props }: IconProps) {
   return (
     <svg

@@ -73,6 +73,9 @@ workerdocs/
 * **Current Catalog**:
   * `HomePage/`: The root landing page (`HomePage.tsx`, `Hero.tsx`, `HeroComposition.tsx`, `TrustStatement.tsx`, `HowItWorks.tsx`, `DocumentShowcase.tsx`, `ReadinessSection.tsx`, `SecuritySection.tsx`, `StaffBeaconEcosystem.tsx`, `FAQ.tsx`, `FinalCta.tsx`).
   * `DesignSystemPage/`: The internal design system workshop (`DesignSystemPage.tsx`).
+  * `LoginPage/`: Presentation-only sign-in page (`LoginPage.tsx` [RSC], `LoginForm.tsx` [Client leaf], `index.ts`).
+  * `RegisterPage/`: Presentation-only account creation page (`RegisterPage.tsx` [RSC], `RegisterForm.tsx` [Client leaf], `index.ts`).
+  * `OnboardingPage/`: Presentation-only onboarding sequence (`OnboardingPage.tsx` [RSC], `OnboardingWizard.tsx` [Client leaf], `StepIndicator.tsx`, `PostponedFieldsNotice.tsx`, `index.ts`).
 
 ---
 

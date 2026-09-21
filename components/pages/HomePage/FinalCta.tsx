@@ -26,7 +26,7 @@ export function FinalCta() {
             asChild
             className="px-8 font-bold text-sm tracking-wide shadow-md"
           >
-            <Link href="#how-it-works">CREATE YOUR PROFILE</Link>
+            <Link href="/register">CREATE YOUR PROFILE</Link>
           </Button>
           <Button
             variant="outline"
@@ -34,7 +34,7 @@ export function FinalCta() {
             asChild
             className="px-8 font-semibold text-sm text-white! border-white/50 hover:bg-white/10! hover:border-white! hover:text-gray-50! transition-colors shadow-md"
           >
-            <Link href="#readiness">SIGN IN</Link>
+            <Link href="/login">SIGN IN</Link>
           </Button>
         </div>
       </div>

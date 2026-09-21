@@ -29,10 +29,10 @@ export function Hero() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <Button variant="accent" size="lg" asChild className="px-7 font-bold tracking-wide">
-                <Link href="#how-it-works">Create Your Worker Profile</Link>
+                <Link href="/register">Create Your Worker Profile</Link>
               </Button>
               <Button variant="secondary" size="lg" asChild className="px-7 font-semibold">
-                <Link href="#readiness">Sign In</Link>
+                <Link href="/login">Sign In</Link>
               </Button>
             </div>
 

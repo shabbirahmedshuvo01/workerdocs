@@ -52,7 +52,7 @@ export function HeroComposition() {
     <div className="relative w-full max-w-lg lg:max-w-none">
       {/* Ambient background accent */}
       <div
-        className="absolute -inset-2 bg-gradient-to-tr from-blue-500/10 via-[#0052FF]/5 to-transparent rounded-2xl blur-xl -z-10"
+        className="absolute -inset-2 bg-linear-to-tr from-blue-500/10 via-[#0052FF]/5 to-transparent rounded-2xl blur-xl -z-10"
         aria-hidden="true"
       />
 
@@ -107,7 +107,7 @@ export function HeroComposition() {
             {/* Security Pill */}
             <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50/70 border border-blue-100 text-[#0052FF] text-xs font-medium">
               <IconLock size={12} />
-              <span className="text-[11px] font-mono">SECURITY // CONTROLLED</span>
+              <span className="text-[11px] font-mono">SECURITY || CONTROLLED</span>
             </div>
           </div>
 

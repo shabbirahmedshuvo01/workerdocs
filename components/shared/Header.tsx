@@ -9,10 +9,11 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Documents", href: "#documents" },
-    { label: "Security", href: "#security" },
-    { label: "FAQ", href: "#faq" },
+    { label: "How It Works", href: "/#how-it-works" },
+    { label: "Documents", href: "/#documents" },
+    { label: "Onboarding", href: "/onboarding" },
+    { label: "Security", href: "/#security" },
+    { label: "FAQ", href: "/#faq" },
   ];
 
   return (
@@ -37,17 +38,17 @@ export function Header() {
         {/* Right Action Buttons */}
         <div className="hidden sm:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <Link href="#readiness">Login</Link>
+            <Link href="/login">Login</Link>
           </Button>
           <Button variant="accent" size="sm" asChild className="px-4 font-semibold">
-            <Link href="#how-it-works">Register</Link>
+            <Link href="/register">Register</Link>
           </Button>
         </div>
 
         {/* Mobile menu trigger */}
         <div className="flex sm:hidden items-center gap-2">
           <Button variant="accent" size="sm" asChild className="h-8 px-3 text-xs">
-            <Link href="#how-it-works">Register</Link>
+            <Link href="/register">Register</Link>
           </Button>
           <button
             type="button"
@@ -90,12 +91,12 @@ export function Header() {
           </nav>
           <div className="pt-3 flex gap-2">
             <Button variant="outline" size="sm" className="w-full" asChild>
-              <Link href="#readiness" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
                 Login
               </Link>
             </Button>
             <Button variant="accent" size="sm" className="w-full" asChild>
-              <Link href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/register" onClick={() => setMobileMenuOpen(false)}>
                 Register
               </Link>
             </Button>

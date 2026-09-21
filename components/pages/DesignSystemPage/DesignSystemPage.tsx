@@ -131,7 +131,7 @@ export function DesignSystemPage() {
           <div className="flex items-center justify-between mb-5">
             <div>
               <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">
-                02 // Core Pattern
+                02 || Core Pattern
               </span>
               <h2 className="text-xl font-bold tracking-tight text-zinc-900 mt-0.5">
                 Worker Document Cards
@@ -204,7 +204,7 @@ export function DesignSystemPage() {
           <div className="flex items-center justify-between mb-5">
             <div>
               <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">
-                03 // Compliance Status UI
+                03 || Compliance Status UI
               </span>
               <h2 className="text-xl font-bold tracking-tight text-zinc-900 mt-0.5">
                 Technical Status Badges & Pips
