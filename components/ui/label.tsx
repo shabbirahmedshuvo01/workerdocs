@@ -1,0 +1,23 @@
+import React from "react";
+
+export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
+  required?: boolean;
+}
+
+export function Label({
+  children,
+  required = false,
+  className = "",
+  ...props
+}: LabelProps) {
+  return (
+    <label
+      className={`block text-xs font-semibold text-zinc-800 tracking-tight select-none mb-1.5 ${className}`}
+      {...props}
+    >
+      {children}
+      {required && <span className="ml-1 text-rose-500">*</span>}
+    </label>
+  );
+}
+
