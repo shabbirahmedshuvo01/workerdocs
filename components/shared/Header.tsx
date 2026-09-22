@@ -36,7 +36,7 @@ export function Header() {
         </nav>
 
         {/* Right Action Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
             <Link href="/login">Login</Link>
           </Button>
@@ -46,7 +46,7 @@ export function Header() {
         </div>
 
         {/* Mobile menu trigger */}
-        <div className="flex sm:hidden items-center gap-2">
+        <div className="flex md:hidden items-center gap-2">
           <Button variant="accent" size="sm" asChild className="h-8 px-3 text-xs">
             <Link href="/register">Register</Link>
           </Button>
@@ -75,7 +75,7 @@ export function Header() {
         <div
           id="mobile-navigation"
           aria-labelledby="mobile-menu-button"
-          className="sm:hidden border-t border-gray-100 bg-white px-4 py-5 space-y-3 shadow-lg"
+          className="md:hidden border-t border-gray-100 bg-white px-4 py-5 space-y-3 shadow-lg"
         >
           <nav className="space-y-1" aria-label="Mobile Navigation">
             {navLinks.map((link) => (

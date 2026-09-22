@@ -26,27 +26,27 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#how-it-works" className="hover:text-[#0052FF] transition-colors">
+                <Link href="/#how-it-works" className="hover:text-[#0052FF] transition-colors">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link href="#documents" className="hover:text-[#0052FF] transition-colors">
+                <Link href="/#documents" className="hover:text-[#0052FF] transition-colors">
                   Documents
                 </Link>
               </li>
               <li>
-                <Link href="#readiness" className="hover:text-[#0052FF] transition-colors">
+                <Link href="/#readiness" className="hover:text-[#0052FF] transition-colors">
                   Readiness
                 </Link>
               </li>
               <li>
-                <Link href="#security" className="hover:text-[#0052FF] transition-colors">
+                <Link href="/#security" className="hover:text-[#0052FF] transition-colors">
                   Security
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="hover:text-[#0052FF] transition-colors">
+                <Link href="/#faq" className="hover:text-[#0052FF] transition-colors">
                   FAQ
                 </Link>
               </li>
@@ -89,12 +89,12 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#faq" className="hover:text-[#0052FF] transition-colors">
+                <Link href="/#faq" className="hover:text-[#0052FF] transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="hover:text-[#0052FF] transition-colors">
+                <Link href="/#faq" className="hover:text-[#0052FF] transition-colors">
                   Help
                 </Link>
               </li>
