@@ -40,7 +40,7 @@ export function HowItWorks() {
           </h2>
           <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
             A simple, connected sequence designed to keep your employment documents
-            organized and verified between contracts.
+            organised and verified between contracts.
           </p>
         </div>
 

@@ -13,10 +13,8 @@ export function TrustStatement() {
         </h2>
 
         <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto">
-          WorkerDocs is designed to keep important employment and qualification
-          documents organized in one verified record. Workers no longer need to
-          repeatedly search for, rescan, or resubmit the same paperwork every time
-          they start a new contract or placement.
+          No more searching, rescanning, or resubmitting paperwork for every new job.
+          Keep your verified credentials in one profile, ready for any UK site induction.
         </p>
 
         {/* 3 simple highlights */}
@@ -31,7 +29,7 @@ export function TrustStatement() {
           </div>
           <div>
             <p className="font-bold text-[#0052FF] text-sm font-sans">
-              organized Credentials
+              Organised Credentials
             </p>
             <p className="text-xs text-gray-500 font-sans mt-0.5">
               Qualifications &amp; trade cards together

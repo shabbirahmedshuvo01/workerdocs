@@ -45,9 +45,8 @@ export function StaffBeaconEcosystem() {
           </h2>
 
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            WorkerDocs is designed to connect seamlessly with the wider
-            StaffBeacon staffing platform, keeping worker records and documentation
-            organized between placements.
+            WorkerDocs connects seamlessly with the StaffBeacon workforce platform,
+            keeping worker credentials verified and organised between contract placements.
           </p>
         </div>
 
@@ -88,7 +87,7 @@ export function StaffBeaconEcosystem() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <Button variant="accent" size="lg" asChild className="font-bold tracking-wide">
-            <Link href="#how-it-works">Create Your Worker Profile</Link>
+            <Link href="/register">Create Your Worker Profile</Link>
           </Button>
         </div>
       </div>

@@ -304,7 +304,26 @@ export function RegisterForm() {
               setConsent(e.target.checked);
               if (errors.consent) setErrors((prev) => ({ ...prev, consent: undefined }));
             }}
-            label="I agree to the Terms of Service and Worker Privacy Policy"
+            label={
+              <span>
+                I agree to the{" "}
+                <Link
+                  href="/terms"
+                  target="_blank"
+                  className="text-[#0052FF] hover:underline font-semibold"
+                >
+                  Terms of Service
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="/privacy-policy"
+                  target="_blank"
+                  className="text-[#0052FF] hover:underline font-semibold"
+                >
+                  Worker Privacy Policy
+                </Link>
+              </span>
+            }
             description="I confirm my details are accurate for UK workforce compliance records."
           />
           {errors.consent && (

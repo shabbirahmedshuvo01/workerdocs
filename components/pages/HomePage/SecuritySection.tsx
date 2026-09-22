@@ -9,23 +9,23 @@ import {
 export function SecuritySection() {
   const pillars = [
     {
-      title: "organized Records",
-      desc: "Stop hunting through paper files or buried email attachments. All your work documents live in one structured location.",
+      title: "Organised Records",
+      desc: "No more lost paperwork or buried email attachments. All work documents live in one secure digital vault.",
       icon: <IconFileText size={18} className="text-[#0052FF]" />,
     },
     {
       title: "Clear Document Status",
-      desc: "Know immediately whether your credentials are verified, active, or approaching their expiration dates.",
+      desc: "Know immediately whether your credentials are verified, active, or approaching expiry.",
       icon: <IconCheckCircle size={18} className="text-[#0052FF]" />,
     },
     {
       title: "Controlled Access",
-      desc: "You control your worker profile. Share verified summaries with employers only when needed for work placements.",
+      desc: "Share verified credential summaries with employers only when needed for site placements.",
       icon: <IconLock size={18} className="text-[#0052FF]" />,
     },
     {
       title: "Compliance Readiness",
-      desc: "Keep trade cards and identity verification records prepared ahead of site inductions and project start dates.",
+      desc: "Keep tickets and identity records prepared ahead of inductions and contract start dates.",
       icon: <IconShieldCheck size={18} className="text-[#0052FF]" />,
     },
   ];
@@ -42,9 +42,9 @@ export function SecuritySection() {
             <span className="text-[#0052FF]">Not scattered.</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
-            WorkerDocs gives working professionals control over their employment
-            records. Rather than handing over physical cards or sending unorganized
-            photos, keep your credentials structured in one place.
+            Take full control of your employment records. Instead of handing over
+            physical cards or unorganised photos, present structured, verified
+            credentials instantly.
           </p>
         </div>
 

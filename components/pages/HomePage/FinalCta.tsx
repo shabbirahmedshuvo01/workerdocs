@@ -16,7 +16,7 @@ export function FinalCta() {
 
         <p className="text-base sm:text-lg text-blue-100 max-w-xl mx-auto leading-relaxed">
           Create your WorkerDocs profile and keep your important work records
-          organized across UK placements and contracts.
+          organised across UK placements and contracts.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">

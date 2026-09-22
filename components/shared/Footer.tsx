@@ -12,7 +12,7 @@ export function Footer() {
             <Logo size="md" />
             <p className="text-xs text-gray-500 max-w-sm leading-relaxed">
               Keep your work documents, qualifications and important records
-              organized, ready whenever you need them.
+              organised, ready whenever you need them.
             </p>
             <p className="text-xs font-mono text-gray-400">
               WorkerDocs — Worker Document &amp; Compliance System
@@ -108,13 +108,18 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#faq" className="hover:text-[#0052FF] transition-colors">
-                  Privacy
+                <Link href="/privacy-policy" className="hover:text-[#0052FF] transition-colors">
+                  Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="hover:text-[#0052FF] transition-colors">
-                  Terms
+                <Link href="/cookie-policy" className="hover:text-[#0052FF] transition-colors">
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-[#0052FF] transition-colors">
+                  Terms of Service
                 </Link>
               </li>
             </ul>

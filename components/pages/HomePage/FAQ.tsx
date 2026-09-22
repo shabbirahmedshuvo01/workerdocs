@@ -9,7 +9,7 @@ export function FAQ() {
     {
       question: "What is WorkerDocs?",
       answer:
-        "WorkerDocs is a worker document and profile management platform that lets UK workers and contractors store, organize, and track their work-related documents and qualifications in one secure place.",
+        "WorkerDocs is a worker document and profile management platform that lets UK workers and contractors store, organise, and track their work-related documents and qualifications in one secure place.",
     },
     {
       question: "What documents can I keep in WorkerDocs?",
@@ -34,7 +34,7 @@ export function FAQ() {
     {
       question: "How do I get started?",
       answer:
-        "Getting started takes just a few minutes. Create your profile, upload or enter your primary work documents, and keep your verified records organized for your next opportunity.",
+        "Getting started takes just a few minutes. Create your profile, upload or enter your primary work documents, and keep your verified records organised for your next opportunity.",
     },
   ];
 

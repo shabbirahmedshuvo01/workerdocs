@@ -22,7 +22,7 @@ export function Hero() {
 
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl">
               Keep your employment documents, qualifications and compliance
-              records organized in one secure place — ready whenever your next
+              records organised in one secure place — ready whenever your next
               opportunity comes.
             </p>
 

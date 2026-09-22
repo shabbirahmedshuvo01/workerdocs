@@ -3,14 +3,14 @@ import { IconCheck } from "./icons";
 
 export interface CheckboxProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type"> {
-  label?: string;
-  description?: string;
+  label?: React.ReactNode;
+  description?: React.ReactNode;
 }
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   ({ label, description, disabled, className = "", id, checked, ...props }, ref) => {
     const checkboxId =
-      id || (label ? label.toLowerCase().replace(/\s+/g, "-") : undefined);
+      id || (typeof label === "string" ? label.toLowerCase().replace(/\s+/g, "-") : undefined);
 
     return (
       <div className={`flex items-start gap-3 select-none ${className}`}>

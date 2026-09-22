@@ -79,6 +79,9 @@ To preserve architectural purity and prevent premature coupling, the following b
 | `/login` | **Public (Presentation)** | Dedicated sign-in entry flow with client-side form validation, focus states, and presentation loading states (no backend). |
 | `/register` | **Public (Presentation)** | Dedicated account creation flow with UK trade selection, client-side validation, and compliance consent controls (no backend). |
 | `/onboarding` | **Public (Presentation)** | Multi-step worker profile initialization and Right to Work compliance declaration flow (no backend). |
+| `/privacy-policy` | **Public (Placeholder)** | Draft placeholder worker privacy policy and UK GDPR data disclosure. |
+| `/cookie-policy` | **Public (Placeholder)** | Draft placeholder cookie policy and essential local storage classification. |
+| `/terms` | **Public (Placeholder)** | Draft placeholder terms of service for UK worker compliance management. |
 | `/design-system` | **Internal / Dev** | Interactive design system showcase and component workbench. **Intentionally hidden from public navigation.** Directly accessible via URL for engineering and design review. |
 
 ---
@@ -100,6 +103,12 @@ workerdocs/
 │   │   └── page.tsx                   # Thin route -> delegates to <RegisterPage />
 │   ├── onboarding/
 │   │   └── page.tsx                   # Thin route -> delegates to <OnboardingPage />
+│   ├── privacy-policy/
+│   │   └── page.tsx                   # Thin route -> delegates to <PrivacyPolicyPage />
+│   ├── cookie-policy/
+│   │   └── page.tsx                   # Thin route -> delegates to <CookiePolicyPage />
+│   ├── terms/
+│   │   └── page.tsx                   # Thin route -> delegates to <TermsPage />
 │   └── design-system/
 │       └── page.tsx                   # Thin route -> delegates to <DesignSystemPage />
 │
@@ -157,6 +166,18 @@ workerdocs/
 │       │   ├── OnboardingWizard.tsx   # Client leaf (multi-step wizard & validation)
 │       │   ├── StepIndicator.tsx      # Visual & accessible progress bar
 │       │   ├── PostponedFieldsNotice.tsx # Deferred items context notice
+│       │   └── index.ts
+│       │
+│       ├── PrivacyPolicyPage/         # Placeholder privacy policy
+│       │   ├── PrivacyPolicyPage.tsx  # Server Component layout & draft content
+│       │   └── index.ts
+│       │
+│       ├── CookiePolicyPage/          # Placeholder cookie policy
+│       │   ├── CookiePolicyPage.tsx   # Server Component layout & draft content
+│       │   └── index.ts
+│       │
+│       ├── TermsPage/                 # Placeholder terms of service
+│       │   ├── TermsPage.tsx          # Server Component layout & draft content
 │       │   └── index.ts
 │       │
 │       └── DesignSystemPage/          # Design system showcase composition

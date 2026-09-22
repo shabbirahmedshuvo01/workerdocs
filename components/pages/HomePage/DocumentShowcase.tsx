@@ -83,9 +83,7 @@ export function DocumentShowcase() {
             <span className="text-[#0052FF]">In one place.</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
-            WorkerDocs organises the essential documentation required across UK
-            contracting, construction, and workforce placements into an
-            audit-ready profile.
+            Essential UK contracting, trade, and compliance credentials structured into an audit-ready digital profile.
           </p>
         </div>
 

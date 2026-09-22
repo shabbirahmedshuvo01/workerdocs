@@ -88,7 +88,7 @@ export function ReadinessSection() {
 
             <div className="pt-3">
               <Button variant="accent" size="lg" asChild className="font-bold tracking-wide">
-                <Link href="#how-it-works">Create Your Profile</Link>
+                <Link href="/register">Create Your Profile</Link>
               </Button>
             </div>
           </div>

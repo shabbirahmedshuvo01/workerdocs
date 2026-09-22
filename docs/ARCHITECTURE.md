@@ -76,6 +76,9 @@ workerdocs/
   * `LoginPage/`: Presentation-only sign-in page (`LoginPage.tsx` [RSC], `LoginForm.tsx` [Client leaf], `index.ts`).
   * `RegisterPage/`: Presentation-only account creation page (`RegisterPage.tsx` [RSC], `RegisterForm.tsx` [Client leaf], `index.ts`).
   * `OnboardingPage/`: Presentation-only onboarding sequence (`OnboardingPage.tsx` [RSC], `OnboardingWizard.tsx` [Client leaf], `StepIndicator.tsx`, `PostponedFieldsNotice.tsx`, `index.ts`).
+  * `PrivacyPolicyPage/`: Presentation-only placeholder privacy policy (`PrivacyPolicyPage.tsx` [RSC], `index.ts`).
+  * `CookiePolicyPage/`: Presentation-only placeholder cookie policy (`CookiePolicyPage.tsx` [RSC], `index.ts`).
+  * `TermsPage/`: Presentation-only placeholder terms of service (`TermsPage.tsx` [RSC], `index.ts`).
 
 ---
 
