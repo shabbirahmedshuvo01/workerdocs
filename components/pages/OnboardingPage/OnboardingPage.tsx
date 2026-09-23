@@ -25,10 +25,10 @@ export function OnboardingPage() {
               WORKER PROFILE SETUP
             </span>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-950 font-sans">
-              Worker Onboarding & Compliance
+              Worker Profile Onboarding
             </h1>
             <p className="text-xs sm:text-sm text-zinc-500 max-w-md mx-auto leading-relaxed">
-              Complete your profile initialization and Right to Work statutory declaration to prepare your document readiness vault.
+              Complete your core worker details and professional qualifications to prepare your document readiness vault.
             </p>
           </div>
 

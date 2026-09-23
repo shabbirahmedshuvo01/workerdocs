@@ -122,7 +122,7 @@ export function RegisterForm() {
           <div className="flex-1">
             <p className="font-bold">Registration Validation Passed</p>
             <p className="text-emerald-700 mt-0.5">
-              Profile details are valid. You can now proceed to set up your UK compliance details and Right to Work declaration.
+              Profile details are valid. You can now proceed to complete your worker profile and qualifications.
             </p>
             <div className="mt-3">
               <Button
@@ -222,11 +222,10 @@ export function RegisterForm() {
               placeholder="At least 8 characters"
               aria-invalid={Boolean(errors.password)}
               aria-describedby={errors.password ? "register-password-error" : undefined}
-              className={`w-full h-10 pl-3 pr-10 text-sm bg-white text-zinc-900 border rounded-md transition-colors placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-950 focus:border-zinc-950 ${
-                errors.password
+              className={`w-full h-10 pl-3 pr-10 text-sm bg-white text-zinc-900 border rounded-md transition-colors placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-950 focus:border-zinc-950 ${errors.password
                   ? "border-rose-500 focus:border-rose-600 focus:ring-rose-500"
                   : "border-zinc-200 hover:border-zinc-300"
-              }`}
+                }`}
             />
             <button
               type="button"
@@ -272,11 +271,10 @@ export function RegisterForm() {
               placeholder="Repeat your password"
               aria-invalid={Boolean(errors.confirmPassword)}
               aria-describedby={errors.confirmPassword ? "register-confirm-error" : undefined}
-              className={`w-full h-10 pl-3 pr-10 text-sm bg-white text-zinc-900 border rounded-md transition-colors placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-950 focus:border-zinc-950 ${
-                errors.confirmPassword
+              className={`w-full h-10 pl-3 pr-10 text-sm bg-white text-zinc-900 border rounded-md transition-colors placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-950 focus:border-zinc-950 ${errors.confirmPassword
                   ? "border-rose-500 focus:border-rose-600 focus:ring-rose-500"
                   : "border-zinc-200 hover:border-zinc-300"
-              }`}
+                }`}
             />
             <button
               type="button"

@@ -151,15 +151,10 @@ After registration, the worker completes an initial setup sequence before landin
   * Contact Mobile Number (UK format validation).
   * Primary Postal Address (Street, City, Postcode).
   * Primary Sector / Trade Category (Construction, Rail, Logistics, Healthcare, Facilities).
-* **Compliance Declaration (Step 2 — Right to Work Status)**:
-  * Declaration Type:
-    * UK / Irish Citizen (Passport verification required).
-    * EU Settled / Pre-Settled Status (Share code required).
-    * UK Visa / Biometric Residence Permit (BRP share code required).
-* **Optional Information (Step 3 — Professional Cards)**:
+* **Optional Information (Step 2 — Professional Cards)**:
   * CSCS / Trade Card registration number.
   * Expiration date (if available).
-* **Future Information (Intentionally Postponed)**:
+* **Future Information (Deferred to Document Vault / Placement)**:
   * National Insurance Number (NINO).
   * CIS (Construction Industry Scheme) UTR number.
   * Bank disbursement details.
