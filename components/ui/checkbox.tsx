@@ -9,8 +9,9 @@ export interface CheckboxProps
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   ({ label, description, disabled, className = "", id, checked, ...props }, ref) => {
+    const generatedId = React.useId();
     const checkboxId =
-      id || (typeof label === "string" ? label.toLowerCase().replace(/\s+/g, "-") : undefined);
+      id || (typeof label === "string" ? label.toLowerCase().replace(/\s+/g, "-") : generatedId);
 
     return (
       <div className={`flex items-start gap-3 select-none ${className}`}>
@@ -24,10 +25,11 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             className="peer sr-only"
             {...props}
           />
-          <div
+          <label
+            htmlFor={checkboxId}
             className={`h-4 w-4 rounded border transition-all duration-150 flex items-center justify-center cursor-pointer ${disabled
-                ? "bg-zinc-100 border-zinc-200 cursor-not-allowed text-zinc-300"
-                : "border-zinc-300 bg-white peer-checked:bg-zinc-950 peer-checked:border-zinc-950 peer-focus-visible:ring-2 peer-focus-visible:ring-zinc-950 peer-focus-visible:ring-offset-1 hover:border-zinc-400"
+              ? "bg-zinc-100 border-zinc-200 cursor-not-allowed text-zinc-300"
+              : "border-zinc-300 bg-white peer-checked:bg-zinc-950 peer-checked:border-zinc-950 peer-focus-visible:ring-2 peer-focus-visible:ring-zinc-950 peer-focus-visible:ring-offset-1 hover:border-zinc-400"
               }`}
           >
             <IconCheck
@@ -35,7 +37,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
               className={`transition-opacity duration-150 text-white stroke-[2.5] ${checked ? "opacity-100" : "opacity-0 peer-checked:opacity-100"
                 }`}
             />
-          </div>
+          </label>
         </div>
         {(label || description) && (
           <label

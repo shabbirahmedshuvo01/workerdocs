@@ -223,8 +223,8 @@ export function RegisterForm() {
               aria-invalid={Boolean(errors.password)}
               aria-describedby={errors.password ? "register-password-error" : undefined}
               className={`w-full h-10 pl-3 pr-10 text-sm bg-white text-zinc-900 border rounded-md transition-colors placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-950 focus:border-zinc-950 ${errors.password
-                  ? "border-rose-500 focus:border-rose-600 focus:ring-rose-500"
-                  : "border-zinc-200 hover:border-zinc-300"
+                ? "border-rose-500 focus:border-rose-600 focus:ring-rose-500"
+                : "border-zinc-200 hover:border-zinc-300"
                 }`}
             />
             <button
@@ -272,8 +272,8 @@ export function RegisterForm() {
               aria-invalid={Boolean(errors.confirmPassword)}
               aria-describedby={errors.confirmPassword ? "register-confirm-error" : undefined}
               className={`w-full h-10 pl-3 pr-10 text-sm bg-white text-zinc-900 border rounded-md transition-colors placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-950 focus:border-zinc-950 ${errors.confirmPassword
-                  ? "border-rose-500 focus:border-rose-600 focus:ring-rose-500"
-                  : "border-zinc-200 hover:border-zinc-300"
+                ? "border-rose-500 focus:border-rose-600 focus:ring-rose-500"
+                : "border-zinc-200 hover:border-zinc-300"
                 }`}
             />
             <button
@@ -309,6 +309,7 @@ export function RegisterForm() {
                   href="/terms"
                   target="_blank"
                   className="text-[#0052FF] hover:underline font-semibold"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   Terms of Service
                 </Link>{" "}
@@ -317,6 +318,7 @@ export function RegisterForm() {
                   href="/privacy-policy"
                   target="_blank"
                   className="text-[#0052FF] hover:underline font-semibold"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   Worker Privacy Policy
                 </Link>
