@@ -258,8 +258,8 @@ export function OnboardingWizard() {
                   asChild
                   className="w-full sm:w-auto font-semibold text-xs flex items-center justify-center gap-1.5"
                 >
-                  <Link href="/">
-                    <span>Return to Overview</span>
+                  <Link href="/dashboard">
+                    <span>Go to Worker Dashboard</span>
                     <IconArrowUpRight size={14} />
                   </Link>
                 </Button>

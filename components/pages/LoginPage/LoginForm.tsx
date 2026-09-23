@@ -77,15 +77,25 @@ export function LoginForm() {
             <p className="text-emerald-700 mt-0.5">
               Inputs are valid. In the backend milestone, this will establish a verified worker session.
             </p>
-            <div className="mt-3">
+            <div className="mt-3 flex flex-wrap items-center gap-2">
               <Button
                 variant="accent"
                 size="sm"
                 asChild
                 className="text-xs font-semibold shadow-xs"
               >
+                <Link href="/dashboard">
+                  Go to Worker Dashboard →
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                asChild
+                className="text-xs font-medium"
+              >
                 <Link href="/onboarding">
-                  Proceed to Worker Onboarding →
+                  Worker Onboarding
                 </Link>
               </Button>
             </div>
@@ -173,11 +183,10 @@ export function LoginForm() {
               placeholder="••••••••••••"
               aria-invalid={Boolean(errors.password)}
               aria-describedby={errors.password ? "login-password-error" : undefined}
-              className={`w-full h-10 pl-3 pr-10 text-sm bg-white text-zinc-900 border rounded-md transition-colors placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-950 focus:border-zinc-950 ${
-                errors.password
+              className={`w-full h-10 pl-3 pr-10 text-sm bg-white text-zinc-900 border rounded-md transition-colors placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-950 focus:border-zinc-950 ${errors.password
                   ? "border-rose-500 focus:border-rose-600 focus:ring-rose-500"
                   : "border-zinc-200 hover:border-zinc-300"
-              }`}
+                }`}
             />
             <button
               type="button"

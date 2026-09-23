@@ -78,7 +78,8 @@ To preserve architectural purity and prevent premature coupling, the following b
 | `/` | **Public** | Primary commercial landing page explaining the value proposition, workflow, document repository, compliance readiness, and ecosystem connection. |
 | `/login` | **Public (Presentation)** | Dedicated sign-in entry flow with client-side form validation, focus states, and presentation loading states (no backend). |
 | `/register` | **Public (Presentation)** | Dedicated account creation flow with UK trade selection, client-side validation, and compliance consent controls (no backend). |
-| `/onboarding` | **Public (Presentation)** | Multi-step worker profile initialization and Right to Work compliance declaration flow (no backend). |
+| `/onboarding` | **Public (Presentation)** | Multi-step worker profile initialization and professional qualifications flow (no backend). |
+| `/dashboard` | **Public (Presentation)** | Worker operational dashboard overview displaying profile readiness, required actions, summary metrics, and recent document activity (no backend). |
 | `/privacy-policy` | **Public (Placeholder)** | Draft placeholder worker privacy policy and UK GDPR data disclosure. |
 | `/cookie-policy` | **Public (Placeholder)** | Draft placeholder cookie policy and essential local storage classification. |
 | `/terms` | **Public (Placeholder)** | Draft placeholder terms of service for UK worker compliance management. |
@@ -103,6 +104,8 @@ workerdocs/
 │   │   └── page.tsx                   # Thin route -> delegates to <RegisterPage />
 │   ├── onboarding/
 │   │   └── page.tsx                   # Thin route -> delegates to <OnboardingPage />
+│   ├── dashboard/
+│   │   └── page.tsx                   # Thin route -> delegates to <DashboardPage />
 │   ├── privacy-policy/
 │   │   └── page.tsx                   # Thin route -> delegates to <PrivacyPolicyPage />
 │   ├── cookie-policy/
@@ -165,7 +168,13 @@ workerdocs/
 │       │   ├── OnboardingPage.tsx     # Server Component wrapper & layout
 │       │   ├── OnboardingWizard.tsx   # Client leaf (multi-step wizard & validation)
 │       │   ├── StepIndicator.tsx      # Visual & accessible progress bar
-│       │   ├── PostponedFieldsNotice.tsx # Deferred items context notice
+│       │   └── index.ts
+│       │
+│       ├── DashboardPage/             # Worker dashboard overview
+│       │   ├── DashboardPage.tsx      # Server Component wrapper & layout
+│       │   ├── ReadinessBanner.tsx    # Compliance readiness progress bar
+│       │   ├── RequiredActionsPanel.tsx # Outstanding worker action notices
+│       │   ├── RecentActivityList.tsx # Recent document status updates
 │       │   └── index.ts
 │       │
 │       ├── PrivacyPolicyPage/         # Placeholder privacy policy
@@ -310,6 +319,6 @@ When executing commands on Windows PowerShell:
 | **Phase 3** | **Architecture & Documentation** | Completed | Thin App Router routes, page-folder pattern, canonical Logo, a11y improvements, and engineering blueprints. |
 | **Phase 4** | **Worker Authentication UI** | Completed | Dedicated presentation-only `/login` and `/register` entry flows with form validation and loading states. |
 | **Phase 5** | **Worker Onboarding & Compliance** | Completed | Multi-step worker profile initialization, Right to Work statutory declaration, and CSCS input flow. |
-| **Phase 6** | **Worker Dashboard & Command Center** | Next | Operational command center, readiness score meter, and action requirement cards. |
-| **Phase 7** | **Document Vault & Upload UI** | Upcoming | Document upload interface, category filtering, status review trail, and preview modals. |
+| **Phase 6** | **Worker Dashboard & Command Center** | Completed (Overview) | Operational command center overview, profile readiness progress meter, action notices, and summary metrics. |
+| **Phase 7** | **Document Vault & Upload UI** | Next | Document upload interface, category filtering, status review trail, and preview modals. |
 | **Phase 8** | **Backend, Prisma & Database** | Future | PostgreSQL schema, Prisma migrations, document file storage, and StaffBeacon API integration. |
