@@ -1,6 +1,5 @@
 import React from "react";
-import { StatusBadge } from "@/components/ui/status-badge";
-import { IconShieldCheck } from "@/components/ui/icons";
+import { IconShieldCheck, StatusBadge } from "../../ui";
 
 export interface ReadinessBannerProps {
   score?: number;

@@ -1,5 +1,4 @@
 import React from "react";
-import { Header, Footer } from "@/components/shared";
 import { Hero } from "./Hero";
 import { TrustStatement } from "./TrustStatement";
 import { HowItWorks } from "./HowItWorks";
@@ -9,6 +8,7 @@ import { SecuritySection } from "./SecuritySection";
 import { StaffBeaconEcosystem } from "./StaffBeaconEcosystem";
 import { FAQ } from "./FAQ";
 import { FinalCta } from "./FinalCta";
+import { Footer, Header } from "../../shared";
 
 export function HomePage() {
   return (

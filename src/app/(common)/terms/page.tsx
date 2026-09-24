@@ -1,5 +1,5 @@
-import { Metadata } from "next";
 import { TermsPage } from "@/components/pages/TermsPage";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service — WorkerDocs",

@@ -1,5 +1,5 @@
-import { Metadata } from "next";
 import { OnboardingPage } from "@/components/pages/OnboardingPage";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Worker Onboarding — WorkerDocs",

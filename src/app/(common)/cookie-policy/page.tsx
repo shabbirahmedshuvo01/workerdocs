@@ -1,5 +1,6 @@
-import { Metadata } from "next";
 import { CookiePolicyPage } from "@/components/pages/CookiePolicyPage";
+import { Metadata } from "next";
+
 
 export const metadata: Metadata = {
   title: "Cookie Policy — WorkerDocs",

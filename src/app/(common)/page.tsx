@@ -1,5 +1,5 @@
-import { Metadata } from "next";
 import { HomePage } from "@/components/pages/HomePage";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "WorkerDocs — Your work documents. Always ready.",

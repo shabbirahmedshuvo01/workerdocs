@@ -1,12 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import {
-  IconUser,
-  IconFileText,
-  IconShieldCheck,
-  IconArrowUpRight,
-} from "@/components/ui/icons";
+import { Button, IconArrowUpRight, IconFileText, IconShieldCheck, IconUser } from "../../ui";
 
 export function StaffBeaconEcosystem() {
   const steps = [

@@ -1,5 +1,5 @@
-import { Metadata } from "next";
 import { PrivacyPolicyPage } from "@/components/pages/PrivacyPolicyPage";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — WorkerDocs",

@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { StatusBadge } from "@/components/ui/status-badge";
-import { IconAlertTriangle, IconFileText } from "@/components/ui/icons";
+import { Button, IconAlertTriangle, IconFileText, StatusBadge } from "../../ui";
+// import { Button } from "@/components/ui/button";
+// import { StatusBadge } from "@/components/ui/status-badge";
+// import { IconAlertTriangle, IconFileText } from "@/components/ui/icons";
 
 export interface RequiredActionItem {
   id: string;

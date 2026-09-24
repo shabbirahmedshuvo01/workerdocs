@@ -1,12 +1,6 @@
 import React from "react";
-import { StatusBadge } from "@/components/ui/status-badge";
-import {
-  IconFileText,
-  IconShieldCheck,
-  IconClock,
-  IconCheckCircle,
-  IconLock,
-} from "@/components/ui/icons";
+import { IconCheckCircle, IconClock, IconFileText, IconLock, IconShieldCheck, StatusBadge } from "../../ui";
+
 
 export function HeroComposition() {
   const documents = [

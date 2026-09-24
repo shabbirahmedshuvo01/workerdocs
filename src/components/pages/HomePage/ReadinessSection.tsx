@@ -1,14 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { StatusBadge } from "@/components/ui/status-badge";
-import {
-  IconShieldCheck,
-  IconClock,
-  IconCheckCircle,
-  IconAlertTriangle,
-  IconFileText,
-} from "@/components/ui/icons";
+import { Button, IconAlertTriangle, IconCheckCircle, IconClock, IconFileText, IconShieldCheck, StatusBadge } from "../../ui";
+
 
 export function ReadinessSection() {
   const readinessItems = [
