@@ -66,20 +66,21 @@ workerdocs/
   * `Header.tsx`: Public navigation bar with responsive mobile menu.
   * `Footer.tsx`: Public multi-column footer with legal and ecosystem links.
   * `AppHeader.tsx`: Authenticated worker navigation bar with status capsule.
+  * `dashboard-part/`: Authenticated dashboard shell elements (`DashboardShell.tsx`, `Sidebar.tsx`, `TopNav.tsx`).
 
-### Layer 4: Page Component Folders (`components/pages/`)
-* **Responsibility**: Full page layouts, page narratives, and page-specific subcomponents.
-* **Rule**: Each page has a dedicated folder. Supporting subcomponents that only exist on that page must live inside that folder, NOT in `components/shared/`.
+### Layer 4: Feature & Page Component Folders (`components/pages/`, `components/Dashboard/`, `components/Profile/`)
+* **Responsibility**: Full page layouts, domain compositions, and isolated subcomponents.
 * **Current Catalog**:
   * `HomePage/`: The root landing page (`HomePage.tsx`, `Hero.tsx`, `HeroComposition.tsx`, `TrustStatement.tsx`, `HowItWorks.tsx`, `DocumentShowcase.tsx`, `ReadinessSection.tsx`, `SecuritySection.tsx`, `StaffBeaconEcosystem.tsx`, `FAQ.tsx`, `FinalCta.tsx`).
   * `DesignSystemPage/`: The internal design system workshop (`DesignSystemPage.tsx`).
-  * `LoginPage/`: Presentation-only sign-in page (`LoginPage.tsx` [RSC], `LoginForm.tsx` [Client leaf], `index.ts`).
-  * `RegisterPage/`: Presentation-only account creation page (`RegisterPage.tsx` [RSC], `RegisterForm.tsx` [Client leaf], `index.ts`).
-  * `OnboardingPage/`: Presentation-only onboarding sequence (`OnboardingPage.tsx` [RSC], `OnboardingWizard.tsx` [Client leaf], `StepIndicator.tsx`, `index.ts`).
-  * `DashboardPage/`: Presentation-only worker dashboard overview (`DashboardPage.tsx` [RSC], `ReadinessBanner.tsx`, `RequiredActionsPanel.tsx`, `RecentActivityList.tsx`, `index.ts`).
-  * `PrivacyPolicyPage/`: Presentation-only placeholder privacy policy (`PrivacyPolicyPage.tsx` [RSC], `index.ts`).
-  * `CookiePolicyPage/`: Presentation-only placeholder cookie policy (`CookiePolicyPage.tsx` [RSC], `index.ts`).
-  * `TermsPage/`: Presentation-only placeholder terms of service (`TermsPage.tsx` [RSC], `index.ts`).
+  * `LoginPage/`: Presentation-only sign-in page (`LoginPage.tsx`, `LoginForm.tsx`, `index.ts`).
+  * `RegisterPage/`: Presentation-only account creation page (`RegisterPage.tsx`, `RegisterForm.tsx`, `index.ts`).
+  * `OnboardingPage/`: Presentation-only onboarding sequence (`OnboardingPage.tsx`, `OnboardingWizard.tsx`, `StepIndicator.tsx`, `index.ts`).
+  * `Dashboard/`: Worker dashboard and vault compositions (`DashboardOverview.tsx`, `DocumentsOverview.tsx`, `ReadinessCard.tsx`, `SummaryStats.tsx`, `RequiredActions.tsx`, `ExpirySection.tsx`, `RecentActivity.tsx`, `DocumentUploadModal.tsx`, `DocumentPreviewModal.tsx`, `index.ts`).
+  * `Profile/`: Worker profile management (`WorkerProfile.tsx`, `ProfileHeader.tsx`, `PersonalInformation.tsx`, `EmploymentDetails.tsx`, `ComplianceSnapshot.tsx`, `SkillsQualifications.tsx`, `ProfileActivity.tsx`, `EditProfileModal.tsx`, `index.ts`).
+  * `PrivacyPolicyPage/`: Presentation privacy policy (`PrivacyPolicyPage.tsx`, `index.ts`).
+  * `CookiePolicyPage/`: Presentation cookie policy (`CookiePolicyPage.tsx`, `index.ts`).
+  * `TermsPage/`: Presentation terms of service (`TermsPage.tsx`, `index.ts`).
 
 ---
 

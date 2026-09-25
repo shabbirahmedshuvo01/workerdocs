@@ -45,15 +45,15 @@ flowchart LR
 
 | Stage | Route | Purpose | Milestone Status |
 |---|---|---|---|
-| **1. Discovery** | `/` | Understand value proposition, workflow, and trust model. | **EXISTING** (Complete) |
-| **2. Design Spec** | `/design-system` | Internal component catalog and UI inspection workbench. | **EXISTING** (Complete) |
-| **3. Access** | `/login`, `/register` | Worker entry point: account creation or sign-in. | **NEXT** (Milestone 2) |
-| **4. Onboarding** | `/onboarding` | Capture core worker details and initial Right to Work status. | **NEXT** (Milestone 3) |
-| **5. Overview** | `/dashboard` | Central command center: readiness score, required actions, alerts. | **NEXT** (Milestone 4) |
-| **6. Vault** | `/documents` | Full document repository, category filtering, and upload modals. | **NEXT** (Milestone 5) |
-| **7. Inspection** | `/documents/[id]` | Document metadata, preview, expiry alerts, and audit trail. | **FUTURE** (Milestone 5/7) |
-| **8. Profile** | `/profile` | Worker trade skills, contact info, and verification badge. | **FUTURE** (Milestone 6) |
-| **9. Audit** | `/audit` | Historical verification log and employer access history. | **FUTURE** (Milestone 7) |
+| **1. Discovery** | `/` | Understand value proposition, workflow, and trust model. | **COMPLETE** (Milestone 1) |
+| **2. Design Spec** | `/design-system` | Internal component catalog and UI inspection workbench. | **COMPLETE** (Milestone 1) |
+| **3. Access** | `/login`, `/register` | Worker entry point: account creation or sign-in. | **COMPLETE** (Milestone 2) |
+| **4. Onboarding** | `/onboarding` | Capture core worker details and initial Right to Work status. | **COMPLETE** (Milestone 3) |
+| **5. Overview** | `/dashboard` | Central command center: readiness score, required actions, alerts. | **COMPLETE** (Milestone 4) |
+| **6. Vault** | `/dashboard/documents` | Full document repository, category filtering, and upload modals. | **COMPLETE** (Milestone 5) |
+| **7. Profile** | `/profile` | Worker trade skills, contact info, and verification badge. | **NEXT** (Milestone 6) |
+| **8. Audit & Sharing** | `/audit` | Historical verification log and employer access history. | **FUTURE** (Milestone 7) |
+| **9. Backend & Database** | Integration | Prisma ORM, PostgreSQL, Auth, S3 storage. | **FUTURE** (Milestone 8) |
 
 ---
 
