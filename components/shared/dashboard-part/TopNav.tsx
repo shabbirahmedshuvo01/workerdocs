@@ -70,14 +70,14 @@ export default function TopNav({ onOpenMobileMenu }: TopNavProps) {
   ];
 
   return (
-    <header className="flex h-16 lg:h-18 w-full items-center justify-between border-b border-zinc-200 bg-white px-4 sm:px-6 lg:px-8 select-none">
+    <header className="flex h-16 lg:h-18 w-full shrink-0 items-center justify-between border-b border-zinc-200 bg-white px-3 sm:px-6 lg:px-8 select-none">
       {/* Left section: Mobile hamburger + Breadcrumbs */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3 min-w-0">
         {/* Mobile Hamburger Button */}
         <button
           type="button"
           onClick={onOpenMobileMenu}
-          className="lg:hidden -ml-1 p-2 text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0052FF]"
+          className="lg:hidden -ml-1 p-2 text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0052FF] shrink-0"
           aria-label="Open navigation menu"
         >
           <svg
@@ -96,24 +96,24 @@ export default function TopNav({ onOpenMobileMenu }: TopNavProps) {
         </button>
 
         {/* Breadcrumb Path */}
-        <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <span className="font-mono text-zinc-400 font-medium hidden sm:inline">
+        <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm min-w-0 truncate">
+          <span className="font-mono text-zinc-400 font-medium hidden sm:inline shrink-0">
             WorkerDocs
           </span>
-          <span className="text-zinc-300 hidden sm:inline" aria-hidden="true">
+          <span className="text-zinc-300 hidden sm:inline shrink-0" aria-hidden="true">
             /
           </span>
-          <span className="font-semibold text-zinc-900 font-sans">
+          <span className="font-semibold text-zinc-900 font-sans truncate">
             Overview
           </span>
-          <span className="ml-2 hidden md:inline-flex items-center gap-1 rounded bg-blue-50 px-2 py-0.5 text-[10px] font-mono font-medium text-[#0052FF] border border-blue-200/60">
+          <span className="ml-1.5 hidden md:inline-flex items-center gap-1 rounded bg-blue-50 px-2 py-0.5 text-[10px] font-mono font-medium text-[#0052FF] border border-blue-200/60 shrink-0">
             Audit-Ready (92%)
           </span>
         </div>
       </div>
 
       {/* Right section: Search bar (desktop) + Notifications + Profile dropdown */}
-      <div className="flex items-center gap-2 sm:gap-3">
+      <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
         {/* Desktop Quick Search Preview */}
         <div className="hidden md:flex items-center relative w-56 lg:w-64">
           <IconSearch
@@ -129,7 +129,7 @@ export default function TopNav({ onOpenMobileMenu }: TopNavProps) {
         </div>
 
         {/* Notification Bell Dropdown */}
-        <div className="relative" ref={notifRef}>
+        <div className="relative shrink-0" ref={notifRef}>
           <button
             type="button"
             onClick={() => {
@@ -156,7 +156,7 @@ export default function TopNav({ onOpenMobileMenu }: TopNavProps) {
           </button>
 
           {notifOpen && (
-            <div className="absolute right-0 z-30 mt-2 w-80 sm:w-88 rounded-xl border border-zinc-200 bg-white shadow-xl animate-in fade-in zoom-in-95 duration-100">
+            <div className="absolute right-0 z-50 mt-2 w-[calc(100vw-1.5rem)] sm:w-88 max-w-sm rounded-xl border border-zinc-200 bg-white shadow-xl animate-in fade-in zoom-in-95 duration-100">
               <div className="flex items-center justify-between border-b border-zinc-100 px-4 py-3">
                 <span className="text-xs font-bold uppercase tracking-wider text-zinc-800 font-mono">
                   Notifications
@@ -198,28 +198,28 @@ export default function TopNav({ onOpenMobileMenu }: TopNavProps) {
         </div>
 
         {/* Vertical divider */}
-        <div className="h-6 w-px bg-zinc-200" aria-hidden="true" />
+        <div className="h-5 w-px bg-zinc-200 shrink-0" aria-hidden="true" />
 
         {/* Profile Avatar & Dropdown */}
-        <div className="relative" ref={profileRef}>
+        <div className="relative shrink-0" ref={profileRef}>
           <button
             type="button"
             onClick={() => {
               setProfileOpen((v) => !v);
               setNotifOpen(false);
             }}
-            className="flex items-center gap-2.5 rounded-lg py-1 pl-1.5 pr-2 hover:bg-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0052FF]"
+            className="flex items-center gap-2 rounded-lg py-1 pl-1 pr-1.5 sm:pr-2 hover:bg-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0052FF]"
             aria-label="User account menu"
             aria-expanded={profileOpen}
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0052FF] text-xs font-bold text-white shadow-xs">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0052FF] text-xs font-bold text-white shadow-xs">
               LV
             </div>
-            <div className="hidden sm:block text-left">
-              <p className="text-xs font-bold text-zinc-900 leading-tight">
+            <div className="hidden sm:block text-left min-w-0">
+              <p className="text-xs font-bold text-zinc-900 leading-tight truncate">
                 Liam Vance
               </p>
-              <p className="text-[10px] font-mono text-zinc-500 leading-tight">
+              <p className="text-[10px] font-mono text-zinc-500 leading-tight truncate">
                 WRK-8921
               </p>
             </div>
@@ -230,7 +230,7 @@ export default function TopNav({ onOpenMobileMenu }: TopNavProps) {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className={`hidden sm:block h-3.5 w-3.5 text-zinc-400 transition-transform ${
+              className={`hidden sm:block h-3.5 w-3.5 text-zinc-400 transition-transform shrink-0 ${
                 profileOpen ? "rotate-180" : ""
               }`}
             >
@@ -239,7 +239,7 @@ export default function TopNav({ onOpenMobileMenu }: TopNavProps) {
           </button>
 
           {profileOpen && (
-            <div className="absolute right-0 z-30 mt-2 w-64 rounded-xl border border-zinc-200 bg-white p-2 shadow-xl animate-in fade-in zoom-in-95 duration-100">
+            <div className="absolute right-0 z-50 mt-2 w-[calc(100vw-1.5rem)] sm:w-64 max-w-xs rounded-xl border border-zinc-200 bg-white p-2 shadow-xl animate-in fade-in zoom-in-95 duration-100">
               {/* User overview block */}
               <div className="border-b border-zinc-100 px-3 py-2.5">
                 <p className="text-xs font-bold text-zinc-950 font-sans">
@@ -261,7 +261,7 @@ export default function TopNav({ onOpenMobileMenu }: TopNavProps) {
               {/* Menu items */}
               <div className="py-1">
                 <Link
-                  href="/dashboard#profile"
+                  href="/profile"
                   onClick={() => setProfileOpen(false)}
                   className="flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium text-zinc-700 hover:bg-zinc-100 transition-colors"
                 >
@@ -269,7 +269,7 @@ export default function TopNav({ onOpenMobileMenu }: TopNavProps) {
                     <IconUser size={14} className="text-zinc-400" />
                     My Profile
                   </span>
-                  <span className="text-[10px] font-mono text-zinc-400">Preview</span>
+                  <span className="text-[10px] font-mono text-[#0052FF] font-medium">WRK-8921</span>
                 </Link>
 
                 <Link

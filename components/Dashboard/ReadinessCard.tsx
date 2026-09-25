@@ -85,7 +85,14 @@ export function ReadinessCard() {
                     </button>
                 </div>
 
-                <div className="mt-5 h-2 overflow-hidden rounded-full bg-zinc-100">
+                <div
+                    className="mt-5 h-2 overflow-hidden rounded-full bg-zinc-100"
+                    role="progressbar"
+                    aria-valuenow={92}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-label="Worker compliance readiness score"
+                >
                     <div
                         className="h-full rounded-full bg-[#0052FF] transition-all"
                         style={{ width: "92%" }}

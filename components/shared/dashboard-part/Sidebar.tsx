@@ -2,164 +2,306 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-// ── Icons (inline SVG, no icon library required) ──────────────────────────
+// ── Icons ─────────────────────────────────────────────────────────────────
 const icons = {
-    dashboard: (
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.75}
-            d="M3.75 12l8.25-8.25L20.25 12M4.5 9.75V19.5a.75.75 0 00.75.75h4.5v-6h4.5v6h4.5a.75.75 0 00.75-.75V9.75"
-        />
-    ),
-    orders: (
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.75}
-            d="M9 3.75h6a1.5 1.5 0 011.5 1.5v15l-4.5-2.25L7.5 20.25v-15A1.5 1.5 0 019 3.75z"
-        />
-    ),
-    customers: (
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.75}
-            d="M15 19.5a3 3 0 00-3-3H6a3 3 0 00-3 3M12.75 8.25a3 3 0 11-6 0 3 3 0 016 0zM21 19.5a3 3 0 00-2.5-2.955M17.25 8.34a3 3 0 010 5.82"
-        />
-    ),
-    products: (
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.75}
-            d="M20.25 7.5l-8.25-4.5L3.75 7.5m16.5 0l-8.25 4.5m8.25-4.5v9l-8.25 4.5m0-9L3.75 7.5m8.25 4.5v9M3.75 7.5v9l8.25 4.5"
-        />
-    ),
-    analytics: (
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.75}
-            d="M3 3v16.5A1.5 1.5 0 004.5 21H21M7.5 15.75V12M12 15.75V8.25M16.5 15.75V5.25"
-        />
-    ),
-    settings: (
-        <>
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.75}
-                d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.108 1.204.166.397.506.71.93.78l.894.15c.542.09.94.56.94 1.109v1.094c0 .55-.398 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.93.78-.164.398-.142.854.108 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.108-.397.166-.71.506-.781.93l-.149.894c-.09.542-.56.94-1.11.94h-1.093c-.55 0-1.02-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527a1.125 1.125 0 01-1.449-.12l-.773-.773a1.125 1.125 0 01-.12-1.45l.527-.738c.25-.35.273-.806.108-1.203-.165-.397-.505-.71-.93-.781l-.894-.149c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.425-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.108.397-.166.71-.506.78-.93l.15-.894z"
-            />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </>
-    ),
+  dashboard: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.75}
+      d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
+    />
+  ),
+  documents: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.75}
+      d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+    />
+  ),
+  onboarding: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.75}
+      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+    />
+  ),
+  designSystem: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.75}
+      d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
+    />
+  ),
+  profile: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.75}
+      d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+    />
+  ),
+  logout: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.75}
+      d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
+    />
+  ),
+  close: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M6 18L18 6M6 6l12 12"
+    />
+  ),
 };
 
 type IconKey = keyof typeof icons;
 
 function Icon({ name, className = "h-5 w-5" }: { name: IconKey; className?: string }) {
-    return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className}>
-            {icons[name]}
-        </svg>
-    );
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className} aria-hidden="true">
+      {icons[name]}
+    </svg>
+  );
 }
 
-// ── Nav data ────────────────────────────────────────────────────────────
-const navItems: { label: string; href: string; icon: IconKey }[] = [
-    { label: "Dashboard", href: "/", icon: "dashboard" },
-    { label: "Orders", href: "/orders", icon: "orders" },
-    { label: "Customers", href: "/customers", icon: "customers" },
-    { label: "Products", href: "/products", icon: "products" },
-    { label: "Analytics", href: "/analytics", icon: "analytics" },
+// ── Nav items ─────────────────────────────────────────────────────────────
+const navItems: { label: string; href: string; icon: IconKey; badge?: string }[] = [
+  { label: "Overview", href: "/dashboard", icon: "dashboard", badge: "Live" },
+  { label: "Document Vault", href: "/dashboard/documents", icon: "documents", badge: "12" },
+  { label: "Worker Profile", href: "/profile", icon: "profile" },
+  { label: "Onboarding Setup", href: "/onboarding", icon: "onboarding" },
+  { label: "Design System", href: "/design-system", icon: "designSystem" },
 ];
 
-export default function Sidebar() {
-    const pathname = usePathname();
-    const [collapsed, setCollapsed] = useState(false);
+export interface SidebarProps {
+  mobileOpen?: boolean;
+  onCloseMobile?: () => void;
+}
+
+export default function Sidebar({ mobileOpen = false, onCloseMobile }: SidebarProps) {
+  const pathname = usePathname();
+  const [collapsed, setCollapsed] = useState(false);
+  const prevPathnameRef = useRef(pathname);
+
+  // Close mobile drawer ONLY when the route actually changes
+  useEffect(() => {
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname;
+      if (onCloseMobile) {
+        onCloseMobile();
+      }
+    }
+  }, [pathname, onCloseMobile]);
+
+  // Handle Escape key to close mobile drawer
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape" && mobileOpen && onCloseMobile) {
+        onCloseMobile();
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [mobileOpen, onCloseMobile]);
+
+  // Sidebar content (shared between desktop and mobile)
+  const renderContent = (isMobileView: boolean) => {
+    const isCollapsed = !isMobileView && collapsed;
 
     return (
-        <aside
-            className={`relative flex h-screen shrink-0 flex-col border-r border-slate-800 bg-slate-950 text-slate-300 transition-[width] duration-200 ${collapsed ? "w-19" : "w-64"
-                }`}
-        >
-            {/* Brand */}
-            <div className="flex h-16 items-center gap-2.5 border-b border-slate-800 px-4 lg:h-24">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-emerald-500 text-sm font-semibold text-slate-950">
-                    S
-                </div>
-                {!collapsed && (
-                    <span className="truncate text-[15px] font-semibold tracking-tight text-white">
-                        Shabbir Inc.
-                    </span>
-                )}
-            </div>
-
-            {/* Nav */}
-            <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
-                {navItems.map((item) => {
-                    const active = pathname === item.href;
-                    return (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            title={collapsed ? item.label : undefined}
-                            className={`group relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${active
-                                ? "bg-slate-900 text-white"
-                                : "text-slate-400 hover:bg-slate-900/60 hover:text-slate-100"
-                                }`}
-                        >
-                            {active && (
-                                <span className="absolute left-0 top-1/2 h-5 w-0.75 -translate-y-1/2 rounded-r bg-emerald-500" />
-                            )}
-                            <Icon name={item.icon} className="h-5 w-5 shrink-0" />
-                            {!collapsed && <span className="truncate">{item.label}</span>}
-                        </Link>
-                    );
-                })}
-            </nav>
-
-            {/* Settings + collapse */}
-            <div className="border-t border-slate-800 px-3 py-4 space-y-1">
-                <Link
-                    href="/settings"
-                    title={collapsed ? "Settings" : undefined}
-                    className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${pathname === "/settings"
-                        ? "bg-slate-900 text-white"
-                        : "text-slate-400 hover:bg-slate-900/60 hover:text-slate-100"
-                        }`}
-                >
-                    <Icon name="settings" className="h-5 w-5 shrink-0" />
-                    {!collapsed && <span>Settings</span>}
-                </Link>
-            </div>
-
-            {/* User */}
-            <div className="flex items-center gap-3 border-t border-slate-800 px-4 py-4">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-800 text-xs font-semibold text-slate-200">
-                    SH
-                </div>
-                {!collapsed && (
-                    <div className="min-w-0">
-                        <p className="truncate text-sm font-medium text-white">Shabbir</p>
-                        <p className="truncate text-xs text-slate-500">Full Stack Dev</p>
-                    </div>
-                )}
-            </div>
-
-            {/* Collapse toggle */}
-            <button
-                onClick={() => setCollapsed((c) => !c)}
-                className="absolute -right-3 top-20 flex h-6 w-6 items-center justify-center rounded-full border border-slate-800 bg-slate-950 text-slate-400 hover:text-white"
+      <div className="flex h-full flex-col justify-between">
+        {/* Top brand + Navigation */}
+        <div>
+          {/* Brand header */}
+          <div className="flex h-16 items-center justify-between border-b border-zinc-800 px-4">
+            <Link
+              href="/dashboard"
+              className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0052FF] rounded-lg"
             >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className={`h-3.5 w-3.5 transition-transform ${collapsed ? "rotate-180" : ""}`}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-            </button>
-        </aside>
+              <div
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0052FF] text-sm font-bold text-white shadow-xs"
+                aria-hidden="true"
+              >
+                W<span className="text-blue-200">.</span>
+              </div>
+              {!isCollapsed && (
+                <div className="flex flex-col">
+                  <span className="text-[15px] font-extrabold tracking-tight text-white font-sans">
+                    Worker<span className="text-[#0052FF]">Docs</span>
+                  </span>
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-zinc-400">
+                    Worker Portal
+                  </span>
+                </div>
+              )}
+            </Link>
+
+            {/* Mobile close button */}
+            {isMobileView && (
+              <button
+                type="button"
+                onClick={onCloseMobile}
+                className="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0052FF]"
+                aria-label="Close navigation menu"
+              >
+                <Icon name="close" className="h-5 w-5" />
+              </button>
+            )}
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="space-y-1.5 px-3 py-4" aria-label="Main Navigation">
+            {navItems.map((item) => {
+              const active =
+                pathname === item.href ||
+                (item.href === "/dashboard" && pathname === "/dashboard");
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  title={isCollapsed ? item.label : undefined}
+                  onClick={isMobileView ? onCloseMobile : undefined}
+                  aria-current={active ? "page" : undefined}
+                  className={`group relative flex items-center justify-between rounded-lg px-3 py-2.5 text-xs font-semibold transition-all ${
+                    active
+                      ? "bg-zinc-900 text-white shadow-xs"
+                      : "text-zinc-400 hover:bg-zinc-900/70 hover:text-zinc-100"
+                  }`}
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    {active && (
+                      <span
+                        className="absolute left-0 top-1/2 h-5 w-1 -translate-y-1/2 rounded-r bg-[#0052FF]"
+                        aria-hidden="true"
+                      />
+                    )}
+                    <span
+                      className={`shrink-0 transition-colors ${
+                        active ? "text-[#0052FF]" : "text-zinc-400 group-hover:text-zinc-200"
+                      }`}
+                    >
+                      <Icon name={item.icon} className="h-4.5 w-4.5" />
+                    </span>
+                    {!isCollapsed && <span className="truncate">{item.label}</span>}
+                  </div>
+
+                  {!isCollapsed && item.badge && (
+                    <span
+                      className={`ml-2 px-1.5 py-0.5 rounded text-[10px] font-mono font-medium ${
+                        active
+                          ? "bg-[#0052FF]/20 text-blue-300 border border-blue-500/30"
+                          : "bg-zinc-800 text-zinc-400 border border-zinc-700/50"
+                      }`}
+                    >
+                      {item.badge}
+                    </span>
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+
+        {/* Bottom User Profile + Logout */}
+        <div className="border-t border-zinc-800 p-3 space-y-2">
+          {/* Worker profile badge */}
+          <div
+            className={`flex items-center gap-3 rounded-lg bg-zinc-900/80 p-2 border border-zinc-800/80 ${
+              isCollapsed ? "justify-center" : ""
+            }`}
+          >
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0052FF] text-xs font-bold text-white shadow-xs">
+              LV
+            </div>
+            {!isCollapsed && (
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between">
+                  <p className="truncate text-xs font-bold text-white">Liam Vance</p>
+                  <span className="text-[9px] font-mono text-emerald-400 font-bold">92%</span>
+                </div>
+                <p className="truncate text-[10px] font-mono text-zinc-400">WRK-8921 • Tier 1</p>
+              </div>
+            )}
+          </div>
+
+          {/* Sign Out link */}
+          <Link
+            href="/login"
+            title={isCollapsed ? "Sign Out" : undefined}
+            onClick={isMobileView ? onCloseMobile : undefined}
+            className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-medium text-rose-400 hover:bg-rose-950/30 hover:text-rose-300 transition-colors ${
+              isCollapsed ? "justify-center" : ""
+            }`}
+          >
+            <Icon name="logout" className="h-4 w-4 shrink-0 text-rose-400" />
+            {!isCollapsed && <span>Sign Out (Demo)</span>}
+          </Link>
+        </div>
+      </div>
     );
+  };
+
+  return (
+    <>
+      {/* ── Desktop Sidebar (>= lg) ─────────────────────────────────── */}
+      <aside
+        className={`relative hidden lg:flex h-screen shrink-0 flex-col border-r border-zinc-800 bg-zinc-950 text-zinc-300 transition-all duration-200 z-30 select-none ${
+          collapsed ? "w-20" : "w-64"
+        }`}
+      >
+        {renderContent(false)}
+
+        {/* Desktop Collapse Toggle Button */}
+        <button
+          type="button"
+          onClick={() => setCollapsed((c) => !c)}
+          className="absolute -right-3 top-20 flex h-6 w-6 items-center justify-center rounded-full border border-zinc-800 bg-zinc-950 text-zinc-400 hover:text-white hover:border-zinc-700 shadow-sm transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0052FF]"
+          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            className={`h-3.5 w-3.5 transition-transform ${collapsed ? "rotate-180" : ""}`}
+            aria-hidden="true"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+      </aside>
+
+      {/* ── Mobile Drawer (< lg) ────────────────────────────────────── */}
+      {mobileOpen && (
+        <div className="lg:hidden">
+          {/* Backdrop overlay */}
+          <div
+            className="fixed inset-0 z-40 bg-zinc-950/70 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
+            onClick={onCloseMobile}
+            aria-hidden="true"
+          />
+
+          {/* Slide-over Drawer */}
+          <aside
+            className="fixed inset-y-0 left-0 z-50 flex w-72 max-w-[85vw] flex-col bg-zinc-950 text-zinc-300 shadow-2xl border-r border-zinc-800 animate-in slide-in-from-left duration-200 select-none"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile Navigation"
+          >
+            {renderContent(true)}
+          </aside>
+        </div>
+      )}
+    </>
+  );
 }
