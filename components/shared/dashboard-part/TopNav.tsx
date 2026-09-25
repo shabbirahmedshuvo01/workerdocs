@@ -273,15 +273,15 @@ export default function TopNav({ onOpenMobileMenu }: TopNavProps) {
                 </Link>
 
                 <Link
-                  href="/dashboard#compliance"
+                  href="/audit"
                   onClick={() => setProfileOpen(false)}
                   className="flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium text-zinc-700 hover:bg-zinc-100 transition-colors"
                 >
                   <span className="flex items-center gap-2">
                     <IconShieldCheck size={14} className="text-zinc-400" />
-                    Compliance Records
+                    Audit &amp; Sharing
                   </span>
-                  <span className="text-[10px] font-mono text-zinc-400">4/5</span>
+                  <span className="text-[10px] font-mono text-emerald-600 font-semibold">Synced</span>
                 </Link>
 
                 <Link

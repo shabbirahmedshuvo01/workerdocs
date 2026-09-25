@@ -38,6 +38,14 @@ const icons = {
       d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
     />
   ),
+  audit: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.75}
+      d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+    />
+  ),
   profile: (
     <path
       strokeLinecap="round"
@@ -79,6 +87,7 @@ const navItems: { label: string; href: string; icon: IconKey; badge?: string }[]
   { label: "Overview", href: "/dashboard", icon: "dashboard", badge: "Live" },
   { label: "Document Vault", href: "/dashboard/documents", icon: "documents", badge: "12" },
   { label: "Worker Profile", href: "/profile", icon: "profile" },
+  { label: "Audit & Sharing", href: "/audit", icon: "audit", badge: "Sync" },
   { label: "Onboarding Setup", href: "/onboarding", icon: "onboarding" },
   { label: "Design System", href: "/design-system", icon: "designSystem" },
 ];

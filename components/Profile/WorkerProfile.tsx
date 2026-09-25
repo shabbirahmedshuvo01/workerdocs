@@ -53,11 +53,11 @@ export function WorkerProfile() {
   };
 
   const handleExportPassport = () => {
-    showToast("Generating WorkerDocs Audit Passport (WRK-8921-Passport.pdf)...");
+    showToast("Demo Mode: Generating sample audit passport PDF (WRK-8921)...");
   };
 
   const handleUploadSuccess = (doc: DocumentItem) => {
-    showToast(`Document "${doc.title}" submitted to vault.`);
+    showToast(`Demo: Document "${doc.title}" submitted to vault.`);
   };
 
   return (
