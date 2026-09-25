@@ -30,10 +30,10 @@ export default function ProfileHeader({
         `https://workerdocs.co.uk/passport/${profile.workerId}?status=verified`
       );
       setCopiedLink(true);
-      onShowToast("Public verification passport link copied to clipboard.");
+      onShowToast("Demo passport verification link copied to clipboard.");
       setTimeout(() => setCopiedLink(false), 2500);
     } catch {
-      onShowToast("Verification link copied: WRK-8921");
+      onShowToast("Demo link copied: WRK-8921");
     }
   };
 
